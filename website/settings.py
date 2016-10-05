@@ -21,12 +21,12 @@ TEMPLATE_DIRS = (
 
     TEMPLATE_PATH,
 )
-print("template path is ",TEMPLATE_PATH)
+print("template path is ", TEMPLATE_PATH)
 # adding the media path
 
 
 
-#adding the static file path
+# adding the static file path
 
 
 
@@ -42,7 +42,6 @@ SECRET_KEY = 'x05hpfmcsh+02&8_#(loj9b7)cgrjg^z_5gad4zx*@s4qv2j8p'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -88,7 +87,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'website.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
@@ -98,7 +96,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
@@ -118,7 +115,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
 
@@ -132,19 +128,17 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
 
-STATIC_PATH = os.path.join(BASE_DIR,'static')
-print("static path is ",STATIC_PATH)
-
+STATIC_PATH = os.path.join(BASE_DIR, 'static')
+print("static path is ", STATIC_PATH)
 
 STATICFILES_DIRS = (
     STATIC_PATH,
 )
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # Absolute path to the media directory
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Absolute path to the media directory
