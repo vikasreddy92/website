@@ -12,30 +12,16 @@
     <title>Rango {% block title %}How to Tango with Django {% endblock %}</title>
 
     <script src="{% static 'js/jquery-3.1.0.js' %}"></script>
-
-    <link href='http://getbootstrap.com/dist/css/bootstrap.min.css' rel='stylesheet'>
-
-    <link rel='stylesheet' href="{% static 'bootstrap-3.3.7-dist/css/bootstrap.min.css' %}"/>
-
-    <script src="{% static 'bootstrap-3.3.7-dist/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/angular.min.js'%}"></script>
+    <script src="{% static 'js/job.js'%}"></script>
 
 
+    <link href='css/bootstrap.min.css' rel='stylesheet'>
+    <link rel='stylesheet' href="{% static 'css/bootstrap.min.css' %}"/>
     <link href='http://getbootstrap.com/examples/dashboard/dashboard.css' rel='stylesheet'>
 
-    <script src="{% static 'js/angular.min.js'%}"></script>
-    <script>
-         var MyApp = angular.module('Myapp', []);
 
-         MyApp.controller('HelloController', function($scope) {
-            $scope.helloTo = {};
-            $scope.helloTo.title = 'AngularJS';
-         });
-     MyApp.config(function($interpolateProvider){
-    $interpolateProvider.startSymbol('{[{');
-    $interpolateProvider.endSymbol('}]}');
-});
-
-    </script>
 </head>
 
 <body>
@@ -70,9 +56,8 @@
             {% block side_block %}{% endblock %}
         </div>
         <div class='col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main'>
-            <div ng-hide="toggle">
-                <h1>vikas</h1>{[{ 1+2 }]}
-                {[{ctrl.name}]}
+            <div ng-hide="ctrl.toggle">
+                {% block add_job_body %} {% endblock %}
             </div>
             <div>
                 {% block body_block %}{% endblock %}
@@ -81,11 +66,6 @@
     </div>
 </div>
 
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
-<script src='http://getbootstrap.com/dist/js/bootstrap.min.js'></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src='http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js'></script>
 </body>

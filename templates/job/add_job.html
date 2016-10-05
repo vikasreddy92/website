@@ -1,27 +1,15 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Rango</title>
-    </head>
-
-    <body>
-        <h1>Add a Category</h1>
-
-        <form id="job_form" method="post" action="/job/addjob/">
-
-            {% csrf_token %}
-            {% for hidden in form.hidden_fields %}
-            {{ hidden }}<br>
-            {% endfor %}
-
-            {% for field in form.visible_fields %}
-                {{ field.errors }}
-                {{ field.help_text }}
-                {{ field }}<br>
-            {% endfor %}
-
-            <input type="submit" name="submit" value="Create job link" />
-        </form>
-    </body>
-
-</html>
+{% extends "job/index.html" %}
+{% block add_job_body %}
+    <h1>Add a Category</h1>
+    <form id="job_form" method="post" action="/job/addjob/">
+        {% for field in form.visible_fields %}
+            <div class="form-group row">
+                <label class="col-xs-2">{{ field.label }}</label>
+                <div class="col-sm-7">
+                    {{ field }}
+                </div>
+            </div>
+        {% endfor %}
+        <button class="btn btn-primary">Create job link</button>
+    </form>
+{% endblock %}
